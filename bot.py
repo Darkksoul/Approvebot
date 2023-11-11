@@ -102,6 +102,10 @@ async def chk(_, cb : CallbackQuery):
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ info ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+import os
+
+SUDO = list(map(int, os.getenv("SUDO", "")))
+
 @app.on_message(filters.command("users") & filters.user(SUDO))
 async def dbtool(_, m : Message):
     xx = all_users()
