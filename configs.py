@@ -1,4 +1,4 @@
-from os import path, getenv
+from os import getenv  # Added import statement for getenv
 
 class Config:
     API_ID = int(getenv("API_ID", ""))
